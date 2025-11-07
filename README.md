@@ -1,14 +1,16 @@
 # BJI Wag-Com Seat Leon Project
 
 ## 🚗 Proje Özeti
-**BJI Wag-Com Seat Leon** - Seat Leon araçları için VAG-COM/VCDS diagnostik ve iletişim projesi
+**BJI Wag-Com Seat Leon** - 2016 Seat Leon Style paket için özel VAG-COM/VCDS diagnostik ve iletişim projesi
 
 ## 📅 Proje Bilgileri
 - **Başlangıç Tarihi**: 7 Kasım 2025
 - **Proje Türü**: Automotive Diagnostics
-- **Araç**: Seat Leon
+- **Hedef Araç**: 2016 Seat Leon Style Paket
+- **Platform**: MQB (Modular Transverse Matrix)
+- **Motor**: 1.2 TSI / 1.4 TSI / 1.6 TDI
 - **İletişim Protokolü**: VAG-COM/VCDS
-- **Platform**: BJI (?)
+- **Repository**: 🔒 Private
 
 ## 🎯 Proje Hedefleri
 - [ ] VAG-COM protokolü analizi

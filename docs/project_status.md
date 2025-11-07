@@ -3,17 +3,21 @@
 ## 📊 Güncel Durum
 **Tarih**: 7 Kasım 2025  
 **Aşama**: 🟡 Proje Başlatma  
-**İlerleme**: %5
+**İlerleme**: %15
+**Hedef Araç**: 2016 Seat Leon Style Paket (5F1)
+**Repository**: 🔒 Private
 
 ## ✅ Tamamlanan İşler
 - [x] Proje workspace oluşturuldu
-- [x] Temel klasör yapısı hazırlandı
-- [x] README.md dokümantasyonu başlatıldı
+- [x] GitHub private repository kuruldu
+- [x] 2016 Leon Style paket spesifikasyonları eklendi
+- [x] MQB platform ECU modülleri araştırıldı
+- [x] Bosch Joint Interface (BJI) tanımlandı
 
 ## 🔄 Devam Eden İşler
-- [ ] Proje detaylarının netleştirilmesi
-- [ ] BJI platformu araştırması
-- [ ] VAG-COM protokol analizi
+- [ ] VAG-COM donanım seçimi
+- [ ] Style paket özel kodlama araştırması  
+- [ ] CAN bus message analizi
 
 ## ⏳ Sonraki Adımlar
 1. **Proje Kapsamını Netleştir**
