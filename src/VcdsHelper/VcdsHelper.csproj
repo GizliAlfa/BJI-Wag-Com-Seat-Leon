@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AssemblyName>VcdsHelper</AssemblyName>
+    <RootNamespace>VcdsHelper</RootNamespace>
+    <Version>1.0.4</Version>
+    <Authors>GizliAlfa</Authors>
+    <Company>BJI</Company>
+    <Product>VCDS Helper - 2016 Seat Leon Style</Product>
+    <Description>2016 Seat Leon Style paket için VCDS parametreleri ve kodlama tarifleri</Description>
+    <Copyright>Copyright © 2025</Copyright>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="Spectre.Console" Version="0.49.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Data\*.json" />
+  </ItemGroup>
+
+</Project>

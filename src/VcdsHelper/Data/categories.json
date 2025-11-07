@@ -1,0 +1,65 @@
+[
+  {
+    "Id": "lighting",
+    "Name": "Aydınlatma Özellikleri",
+    "Description": "Far, DRL, Coming Home, Leaving Home ve diğer aydınlatma sistemleri",
+    "Icon": "[yellow]LIGHT[/]",
+    "Order": 1
+  },
+  {
+    "Id": "comfort",
+    "Name": "Konfor Özellikleri",
+    "Description": "Kilitleme, cam, ayna ve koltuk sistemleri",
+    "Icon": "[cyan]CMFRT[/]",
+    "Order": 2
+  },
+  {
+    "Id": "windows",
+    "Name": "Cam Sistemleri",
+    "Description": "Elektrikli cam sistemleri",
+    "Icon": "[blue]WINDS[/]",
+    "Order": 3
+  },
+  {
+    "Id": "mirrors",
+    "Name": "Ayna Sistemleri",
+    "Description": "Elektrikli ayna sistemleri",
+    "Icon": "[magenta]MIROR[/]",
+    "Order": 4
+  },
+  {
+    "Id": "wipers",
+    "Name": "Silecek Sistemleri",
+    "Description": "Silecek ve yağmur sensörü",
+    "Icon": "[cyan]WIPER[/]",
+    "Order": 5
+  },
+  {
+    "Id": "interior",
+    "Name": "İç Aydınlatma",
+    "Description": "İç aydınlatma ve ambiyans",
+    "Icon": "[yellow]INTER[/]",
+    "Order": 6
+  },
+  {
+    "Id": "menu",
+    "Name": "Menü ve Gösterge",
+    "Description": "Gösterge paneli ve menü ayarları",
+    "Icon": "[green]MENU [/]",
+    "Order": 7
+  },
+  {
+    "Id": "climate",
+    "Name": "Klima",
+    "Description": "İklim kontrol sistemi",
+    "Icon": "[cyan]CLIMA[/]",
+    "Order": 8
+  },
+  {
+    "Id": "security",
+    "Name": "Güvenlik",
+    "Description": "Alarm ve güvenlik sistemleri",
+    "Icon": "[red]SECUR[/]",
+    "Order": 9
+  }
+]

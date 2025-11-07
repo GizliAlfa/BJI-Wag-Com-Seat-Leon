@@ -1,0 +1,199 @@
+[
+  {
+    "Channel": "Leuchte0",
+    "Name": "Sol Kısa Far",
+    "Location": "Left Low Beam",
+    "Function": "Kısa far sol taraf",
+    "SLH": {
+      "DefaultValue": "C1-58-05",
+      "Description": "Halogen, dimming destekli",
+      "LampType": "Halogen"
+    },
+    "BLK": {
+      "DefaultValue": "BLK0",
+      "Description": "Sabit yanma",
+      "Modes": [
+        {
+          "Code": "BLK0",
+          "Name": "Sabit Yanma",
+          "Behavior": "Yanıp sönmez",
+          "Usage": "Farlar, park lambaları"
+        }
+      ]
+    },
+    "DIM": {
+      "DefaultValue": "DIM10",
+      "Description": "Tam güç",
+      "Levels": [
+        {
+          "Code": "DIM10",
+          "Brightness": "Tam Güç",
+          "Percentage": "100%",
+          "Usage": "Farlar için standart"
+        }
+      ]
+    },
+    "IsStandardInStyle": true,
+    "IsOptional": false
+  },
+  {
+    "Channel": "Leuchte4",
+    "Name": "Sol Gündüz Farı (DRL)",
+    "Location": "Left DRL",
+    "Function": "Gündüz farı sol",
+    "SLH": {
+      "DefaultValue": "0",
+      "Description": "Kapalı (Style'da LED DRL olmayabilir)",
+      "LampType": "LED"
+    },
+    "BLK": {
+      "DefaultValue": "BLK0",
+      "Description": "Sabit yanma",
+      "Modes": [
+        {
+          "Code": "BLK0",
+          "Name": "Sabit Yanma",
+          "Behavior": "Yanıp sönmez",
+          "Usage": "DRL için standart"
+        }
+      ]
+    },
+    "DIM": {
+      "DefaultValue": "DIM0",
+      "Description": "Kapalı",
+      "Levels": [
+        {
+          "Code": "DIM7",
+          "Brightness": "Yüksek",
+          "Percentage": "70%",
+          "Usage": "DRL için ideal yasal seviye"
+        }
+      ]
+    },
+    "IsStandardInStyle": false,
+    "IsOptional": true
+  },
+  {
+    "Channel": "Leuchte6",
+    "Name": "Sol Ön Sinyal",
+    "Location": "Left Front Turn Signal",
+    "Function": "Ön sinyal sol",
+    "SLH": {
+      "DefaultValue": "C1-28-01",
+      "Description": "Standart lamba",
+      "LampType": "Halogen"
+    },
+    "BLK": {
+      "DefaultValue": "BLK2",
+      "Description": "Normal yanıp sönme (1 Hz)",
+      "Modes": [
+        {
+          "Code": "BLK2",
+          "Name": "Normal Blink",
+          "Behavior": "1 Hz (normal sinyal)",
+          "Usage": "Sinyal lambaları için standart"
+        },
+        {
+          "Code": "BLK10",
+          "Name": "Sequential",
+          "Behavior": "Sıralı yanma (dinamik)",
+          "Usage": "LED dinamik sinyal (donanım gerekli)"
+        }
+      ]
+    },
+    "DIM": {
+      "DefaultValue": "DIM10",
+      "Description": "Tam güç",
+      "Levels": [
+        {
+          "Code": "DIM10",
+          "Brightness": "Tam Güç",
+          "Percentage": "100%",
+          "Usage": "Sinyal için standart"
+        }
+      ]
+    },
+    "IsStandardInStyle": true,
+    "IsOptional": false
+  },
+  {
+    "Channel": "Leuchte10",
+    "Name": "Sol Ön Sis Farı",
+    "Location": "Left Front Fog Light",
+    "Function": "Ön sis farı sol (viraj lambası olarak kullanılabilir)",
+    "SLH": {
+      "DefaultValue": "C1-35-01",
+      "Description": "Standart lamba",
+      "LampType": "Halogen"
+    },
+    "BLK": {
+      "DefaultValue": "BLK0",
+      "Description": "Sabit yanma",
+      "Modes": [
+        {
+          "Code": "BLK0",
+          "Name": "Sabit Yanma",
+          "Behavior": "Yanıp sönmez",
+          "Usage": "Sis farı ve viraj lambası için"
+        }
+      ]
+    },
+    "DIM": {
+      "DefaultValue": "DIM10",
+      "Description": "Tam güç",
+      "Levels": [
+        {
+          "Code": "DIM10",
+          "Brightness": "Tam Güç",
+          "Percentage": "100%",
+          "Usage": "Sis farı için standart"
+        }
+      ]
+    },
+    "IsStandardInStyle": true,
+    "IsOptional": false
+  },
+  {
+    "Channel": "Leuchte27",
+    "Name": "Ön İç Tavan Lambası",
+    "Location": "Interior Light Front",
+    "Function": "Ön iç aydınlatma",
+    "SLH": {
+      "DefaultValue": "C2-12-05",
+      "Description": "Dimming destekli iç lamba",
+      "LampType": "LED"
+    },
+    "BLK": {
+      "DefaultValue": "BLK0",
+      "Description": "Sabit yanma",
+      "Modes": [
+        {
+          "Code": "BLK0",
+          "Name": "Sabit Yanma",
+          "Behavior": "Yanıp sönmez",
+          "Usage": "Normal iç aydınlatma"
+        },
+        {
+          "Code": "BLK7",
+          "Name": "Fade In/Out",
+          "Behavior": "Yumuşak açılma/kapanma",
+          "Usage": "Konfor aydınlatma efekti"
+        }
+      ]
+    },
+    "DIM": {
+      "DefaultValue": "DIM5",
+      "Description": "Orta parlaklık",
+      "Levels": [
+        {
+          "Code": "DIM5",
+          "Brightness": "Orta",
+          "Percentage": "50%",
+          "Usage": "İç lamba için ideal (göz yormaz)"
+        }
+      ]
+    },
+    "IsStandardInStyle": true,
+    "IsOptional": false
+  }
+]

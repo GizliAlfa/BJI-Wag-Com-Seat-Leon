@@ -1,0 +1,26 @@
+﻿# Build outputs
+bin/
+obj/
+*.exe
+*.dll
+*.pdb
+*.deps.json
+*.runtimeconfig.json
+
+# Backup files
+*_backup*.json
+*_backup*.md
+
+# Logs
+logs/
+*.log
+
+# IDE
+.vs/
+.vscode/
+*.suo
+*.user
+
+# Temporary
+*.tmp
+*.temp

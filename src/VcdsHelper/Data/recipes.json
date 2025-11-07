@@ -1,0 +1,755 @@
+[
+  {
+    "Id": "coming-home",
+    "Name": "Coming Home",
+    "Description": "Aracı kilitlediğinizde farlar belirli bir süre açık kalır, güvenle eve girebilirsiniz",
+    "Category": "Aydınlatma",
+    "Module": "09 - Central Electronics",
+    "Steps": [
+      {
+        "Parameter": "Coming Home Duration (Byte 1, Bit 0-2)",
+        "DefaultValue": "0 (Devre dışı)",
+        "NewValue": "3 (30 saniye)",
+        "Explanation": "Araç kilitlendiğinde farlar 30 saniye açık kalır"
+      },
+      {
+        "Parameter": "Leuchte0BLK (Sol kısa far)",
+        "DefaultValue": "BLK0",
+        "NewValue": "BLK7",
+        "Explanation": "Yumuşak fade in/out efekti"
+      },
+      {
+        "Parameter": "Leuchte0DIM (Sol kısa far)",
+        "DefaultValue": "DIM10",
+        "NewValue": "DIM4",
+        "Explanation": "40% parlaklık (gece için ideal)"
+      }
+    ],
+    "Warnings": [
+      "Akü ömrü için 30-40 saniye süre idealdir"
+    ],
+    "RequiresHardware": false,
+    "Difficulty": 0
+  },
+  {
+    "Id": "leaving-home",
+    "Name": "Leaving Home",
+    "Description": "Uzaktan kumanda ile kilit açtığınızda farlar 30 saniye yanar, karanlıkta aracı bulmanızı kolaylaştırır",
+    "Category": "Aydınlatma",
+    "Module": "09 - Central Electronics",
+    "Steps": [
+      {
+        "Parameter": "Leaving Home Duration (Byte 1, Bit 3-5)",
+        "DefaultValue": "0 (Devre dışı)",
+        "NewValue": "3 (30 saniye)",
+        "Explanation": "Araç açıldığında farlar 30 saniye açık kalır"
+      },
+      {
+        "Parameter": "Leuchte0DIM (Parlaklık)",
+        "DefaultValue": "DIM10",
+        "NewValue": "DIM4",
+        "Explanation": "40% parlaklık (gece için ideal)"
+      }
+    ],
+    "Warnings": [
+      "Akü koruması için 30 saniye önerilir"
+    ],
+    "RequiresHardware": false,
+    "Difficulty": 0
+  },
+  {
+    "Id": "drl-activation",
+    "Name": "DRL (Gündüz Lambası) Aktivasyonu",
+    "Description": "Gündüz görünürlüğü artırmak için LED veya halogen DRL'i aktifleştirir",
+    "Category": "Aydınlatma",
+    "Module": "09 - Central Electronics",
+    "Steps": [
+      {
+        "Parameter": "Daytime Running Lights (Byte 0, Bit 0)",
+        "DefaultValue": "0 (Devre dışı)",
+        "NewValue": "1 (DRL aktif)",
+        "Explanation": "DRL sistemini aktifleştirir"
+      },
+      {
+        "Parameter": "Leuchte4SLH (Sol DRL)",
+        "DefaultValue": "0",
+        "NewValue": "C1-42-02 (LED varsa)",
+        "Explanation": "LED DRL modülünü tanımlar"
+      },
+      {
+        "Parameter": "Leuchte4DIM",
+        "DefaultValue": "DIM0",
+        "NewValue": "DIM7",
+        "Explanation": "70% parlaklık (yasal standart)"
+      }
+    ],
+    "Warnings": [
+      "LED DRL modülü yoksa halogen sis farlarını kullanabilirsiniz",
+      "AB'de 2016 sonrası araçlarda yasal zorunluluktur"
+    ],
+    "RequiresHardware": true,
+    "HardwareRequired": "LED DRL modülü (veya sis farı alternatif)",
+    "Difficulty": 1
+  },
+  {
+    "Id": "cornering-light",
+    "Name": "Viraj Lambası (Cornering Light)",
+    "Description": "Direksiyon çevirdiğinizde ilgili taraf sis farı yanar ve virajı aydınlatır",
+    "Category": "Aydınlatma",
+    "Module": "09 - Central Electronics",
+    "Steps": [
+      {
+        "Parameter": "Cornering Light Function (Byte 3, Bit 0-1)",
+        "DefaultValue": "0 (Devre dışı)",
+        "NewValue": "1 (Sis farı ile aktif)",
+        "Explanation": "Sis farını viraj lambası olarak kullan"
+      }
+    ],
+    "Warnings": [
+      "Hız < 40 km/h olmalı",
+      "Direksiyon >30° çevrilmeli",
+      "Kısa far açık olmalı"
+    ],
+    "RequiresHardware": false,
+    "Difficulty": 0
+  },
+  {
+    "Id": "amerikan-park",
+    "Name": "Amerikan Park Lambası",
+    "Description": "Sinyal çubuğu sol/sağa çekildiğinde o taraftaki park lambası yanar. Karanlık yolda park için güvenlik sağlar",
+    "Category": "Aydınlatma",
+    "Module": "09 - Central Electronics",
+    "Steps": [
+      {
+        "Parameter": "American Parking Light (Byte 12, Bit 2)",
+        "DefaultValue": "0 (Devre dışı)",
+        "NewValue": "1 (Aktif)",
+        "Explanation": "Amerikan Park fonksiyonu aktif"
+      }
+    ],
+    "Warnings": [
+      "Kontak kapalı olmalı",
+      "Sinyal kolu UP = Sol park lambası",
+      "Sinyal kolu DOWN = Sağ park lambası"
+    ],
+    "RequiresHardware": false,
+    "Difficulty": 1
+  },
+  {
+    "Id": "dynamic-signals",
+    "Name": "Dinamik Sinyal (Sequential)",
+    "Description": "Sinyaller akan su gibi sıralı yanar. Görsel olarak çok hoş ve dikkat çekicidir",
+    "Category": "Aydınlatma",
+    "Module": "09 - Central Electronics",
+    "Steps": [
+      {
+        "Parameter": "Dynamic Turn Signals (Byte 18, Bit 6)",
+        "DefaultValue": "0 (Devre dışı)",
+        "NewValue": "1 (Aktif)",
+        "Explanation": "Dinamik sinyal fonksiyonu aktif"
+      },
+      {
+        "Parameter": "Leuchte C01-C06 Sequential Setup",
+        "DefaultValue": "Normal",
+        "NewValue": "Sequential 60ms delay",
+        "Explanation": "Her kanal için 60ms gecikme ayarı"
+      }
+    ],
+    "Warnings": [
+      "DONANIM GEREKLİ: LED dinamik sinyal modülleri!",
+      "Style pakette yoktur, takılmalı!",
+      "Leuchte yapılandırması karmaşıktır - Expert seviye"
+    ],
+    "RequiresHardware": true,
+    "HardwareRequired": "LED Dinamik Sinyal Modülleri",
+    "Difficulty": 3
+  },
+  {
+    "Id": "motorway-light",
+    "Name": "Otoyol Farı (Motorway Light)",
+    "Description": "Yüksek hızlarda (100+ km/h) far ışığı daha uzağı aydınlatır. Otoyolda görüş mesafesini artırır",
+    "Category": "Aydınlatma",
+    "Module": "09 - Central Electronics",
+    "Steps": [
+      {
+        "Parameter": "Motorway Light (Byte 14, Bit 5)",
+        "DefaultValue": "0 (Devre dışı)",
+        "NewValue": "1 (Aktif)",
+        "Explanation": "Otoyol farı fonksiyonu aktif"
+      },
+      {
+        "Parameter": "Activation Speed",
+        "DefaultValue": "0",
+        "NewValue": "100 km/h",
+        "Explanation": "100 km/h üzerinde aktif olur"
+      }
+    ],
+    "Warnings": [
+      "Sadece xenon/LED farlarda çalışır",
+      "Halogen farlarda etkisizdir"
+    ],
+    "RequiresHardware": true,
+    "HardwareRequired": "Xenon veya LED Farlar",
+    "Difficulty": 2
+  },
+  {
+    "Id": "auto-lock-15kmh",
+    "Name": "15 km/h Otomatik Kilit",
+    "Description": "Araç 15 km/h hızı geçince tüm kapılar otomatik kilitlenir",
+    "Category": "Güvenlik",
+    "Module": "46 - Central Comfort System",
+    "Steps": [
+      {
+        "Parameter": "Auto Door Lock at Speed (Byte 5, Bit 0)",
+        "DefaultValue": "0 (Devre dışı)",
+        "NewValue": "1 (Aktif)",
+        "Explanation": "15 km/h'de otomatik kilitle"
+      },
+      {
+        "Parameter": "Tuer_AutoLock_Speed",
+        "DefaultValue": "0",
+        "NewValue": "15 km/h",
+        "Explanation": "Kilitleme hızı 15 km/h"
+      }
+    ],
+    "Warnings": [
+      "Çocuk güvenliği için önerilir"
+    ],
+    "RequiresHardware": false,
+    "Difficulty": 0
+  },
+  {
+    "Id": "auto-unlock-ignition",
+    "Name": "Kontak Kapatınca Kilit Açma",
+    "Description": "Kontağı kapattığınızda tüm kapı kilitleri otomatik açılır. Hızlı çıkış için pratiktir",
+    "Category": "Güvenlik",
+    "Module": "46 - Central Comfort System",
+    "Steps": [
+      {
+        "Parameter": "Auto Unlock on Ignition Off (Byte 5, Bit 1)",
+        "DefaultValue": "0 (Devre dışı)",
+        "NewValue": "1 (Aktif)",
+        "Explanation": "Kontak kapanınca kilidi aç"
+      }
+    ],
+    "Warnings": [
+      "Güvenlik açısından isteğe bağlıdır"
+    ],
+    "RequiresHardware": false,
+    "Difficulty": 0
+  },
+  {
+    "Id": "selective-unlock",
+    "Name": "Çift Kademeli Kilit Açma",
+    "Description": "Uzaktan kumandada kilit açma tuşuna ilk basışta sadece sürücü kapısı, ikinci basışta tüm kapılar açılır",
+    "Category": "Güvenlik",
+    "Module": "46 - Central Comfort System",
+    "Steps": [
+      {
+        "Parameter": "Double Unlock Press (Byte 4)",
+        "DefaultValue": "0 (Devre dışı)",
+        "NewValue": "1 (Aktif)",
+        "Explanation": "Çift kademeli açma fonksiyonu"
+      },
+      {
+        "Parameter": "Selective Unlock",
+        "DefaultValue": "0",
+        "NewValue": "1",
+        "Explanation": "Seçici kilit açma aktif"
+      }
+    ],
+    "Warnings": [
+      "Güvenlik için yararlıdır"
+    ],
+    "RequiresHardware": false,
+    "Difficulty": 0
+  },
+  {
+    "Id": "acoustic-lock",
+    "Name": "Kilitleme Sesi (Bip Sesi)",
+    "Description": "Araç kilitlendiğinde veya kilit açıldığında 'bip' sesi verir. Aracın kilitlendiğinden emin olmanızı sağlar",
+    "Category": "Güvenlik",
+    "Module": "46 - Central Comfort System",
+    "Steps": [
+      {
+        "Parameter": "Acoustic Confirmation (Byte 0)",
+        "DefaultValue": "0 (Sessiz)",
+        "NewValue": "1 (Sesli)",
+        "Explanation": "Kilitleme sesi aktif"
+      },
+      {
+        "Parameter": "Tuer_AcousticLock",
+        "DefaultValue": "0",
+        "NewValue": "2",
+        "Explanation": "Kilitleme + kilit açma sesi"
+      },
+      {
+        "Parameter": "Tuer_AcousticVolume",
+        "DefaultValue": "0",
+        "NewValue": "2",
+        "Explanation": "Orta ses şiddeti"
+      }
+    ],
+    "Warnings": [],
+    "RequiresHardware": false,
+    "Difficulty": 0
+  },
+  {
+    "Id": "safe-lock",
+    "Name": "Güvenli Kilit (Safe Lock)",
+    "Description": "Araç kilitlendiğinde içeriden kapı kolları devre dışı kalır, hırsızlık girişimlerinde içeriden açılamaz",
+    "Category": "Güvenlik",
+    "Module": "46 - Central Comfort System",
+    "Steps": [
+      {
+        "Parameter": "Safe Lock (Byte 5)",
+        "DefaultValue": "0 (Normal kilit)",
+        "NewValue": "1 (Güvenli kilit)",
+        "Explanation": "İçeriden açılamaz mod"
+      },
+      {
+        "Parameter": "Auto Safe After Time",
+        "DefaultValue": "0",
+        "NewValue": "1",
+        "Explanation": "2 dakika sonra otomatik safe"
+      }
+    ],
+    "Warnings": [
+      "ÇOK ÖNEMLİ: Araç içinde kimse olmamalı!",
+      "Safe mode aktifken içerideki kişi dışarı çıkamaz!",
+      "Çocuk/hayvan araçta bırakmayın!"
+    ],
+    "RequiresHardware": false,
+    "Difficulty": 1
+  },
+  {
+    "Id": "key-lights-warning",
+    "Name": "Anahtar ve Far Uyarısı",
+    "Description": "Kontak kapalıyken kapı açılırsa ve anahtar kontakta ise veya farlar açıksa sesli uyarı verir",
+    "Category": "Güvenlik",
+    "Module": "46 - Central Comfort System",
+    "Steps": [
+      {
+        "Parameter": "Key in Ignition Warning (Byte 3)",
+        "DefaultValue": "0",
+        "NewValue": "1",
+        "Explanation": "Anahtar kontakta uyarısı"
+      },
+      {
+        "Parameter": "Lights On Warning",
+        "DefaultValue": "0",
+        "NewValue": "1",
+        "Explanation": "Farlar açık uyarısı"
+      }
+    ],
+    "Warnings": [
+      "Akü boşalmasını önler"
+    ],
+    "RequiresHardware": false,
+    "Difficulty": 0
+  },
+  {
+    "Id": "convenience-windows",
+    "Name": "Uzaktan Cam Açma/Kapama",
+    "Description": "Uzaktan kumanda ile camları açıp kapatabilirsiniz (3 saniye basılı tutma)",
+    "Category": "Konfor",
+    "Module": "46 - Central Comfort System",
+    "Steps": [
+      {
+        "Parameter": "Windows via Remote (Byte 2, Bit 0-1)",
+        "DefaultValue": "0 (Devre dışı)",
+        "NewValue": "3 (Hem açma hem kapama)",
+        "Explanation": "Uzaktan kumanda ile cam kontrolü"
+      },
+      {
+        "Parameter": "Fenster_ComfortOpen",
+        "DefaultValue": "0",
+        "NewValue": "1",
+        "Explanation": "Açma fonksiyonu aktif"
+      },
+      {
+        "Parameter": "Fenster_ComfortClose",
+        "DefaultValue": "0",
+        "NewValue": "1",
+        "Explanation": "Kapama fonksiyonu aktif"
+      }
+    ],
+    "Warnings": [
+      "Camları kapatırken araçta çocuk/hayvan olmamalı!",
+      "Sıkışma riski vardır"
+    ],
+    "RequiresHardware": false,
+    "Difficulty": 0
+  },
+  {
+    "Id": "one-touch-window",
+    "Name": "Tek Dokunuş Cam Açma/Kapama",
+    "Description": "Cam düğmesine hafifçe dokunduğunuzda cam tamamen açılır veya kapanır",
+    "Category": "Konfor",
+    "Module": "46 - Central Comfort System",
+    "Steps": [
+      {
+        "Parameter": "Fenster_FL_OneTouch",
+        "DefaultValue": "1 (Sadece aşağı)",
+        "NewValue": "2 (Aşağı + yukarı)",
+        "Explanation": "Sol ön cam tek dokunuş"
+      },
+      {
+        "Parameter": "Fenster_FR_OneTouch",
+        "DefaultValue": "1",
+        "NewValue": "2",
+        "Explanation": "Sağ ön cam tek dokunuş"
+      },
+      {
+        "Parameter": "Fenster_RL_OneTouch",
+        "DefaultValue": "0",
+        "NewValue": "1",
+        "Explanation": "Sol arka cam (sadece aşağı)"
+      },
+      {
+        "Parameter": "Fenster_RR_OneTouch",
+        "DefaultValue": "0",
+        "NewValue": "1",
+        "Explanation": "Sağ arka cam (sadece aşağı)"
+      }
+    ],
+    "Warnings": [
+      "Arka camlar genelde sadece aşağı tek dokunuş (güvenlik)"
+    ],
+    "RequiresHardware": false,
+    "Difficulty": 0
+  },
+  {
+    "Id": "mirror-tilt-reverse",
+    "Name": "Geri Viteste Ayna Eğilme",
+    "Description": "Geri vitese attığınızda sağ ayna aşağı eğilir, kaldırımı görebilirsiniz",
+    "Category": "Konfor",
+    "Module": "46 - Central Comfort System",
+    "Steps": [
+      {
+        "Parameter": "Mirror Tilt in Reverse (Byte 5, Bit 3)",
+        "DefaultValue": "0 (Devre dışı)",
+        "NewValue": "1 (Sağ ayna eğilir)",
+        "Explanation": "Geri viteste sağ ayna aşağı eğilir"
+      },
+      {
+        "Parameter": "Spiegel_TiltAngle",
+        "DefaultValue": "0",
+        "NewValue": "8",
+        "Explanation": "8 derece eğilme (ideal)"
+      }
+    ],
+    "Warnings": [
+      "Elektrikli ayarlanabilir ayna gereklidir!",
+      "Manuel aynalarda çalışmaz"
+    ],
+    "RequiresHardware": true,
+    "HardwareRequired": "Elektrikli ayarlanabilir dış aynalar",
+    "Difficulty": 1
+  },
+  {
+    "Id": "mirror-auto-fold",
+    "Name": "Kilitleme ile Ayna Katlanması",
+    "Description": "Aracı kilitlediğinizde dış aynalar otomatik olarak katlanır. Aracı açtığınızda otomatik açılır",
+    "Category": "Konfor",
+    "Module": "46 - Central Comfort System",
+    "Steps": [
+      {
+        "Parameter": "Mirror Auto Fold on Lock (Byte 2)",
+        "DefaultValue": "0 (Devre dışı)",
+        "NewValue": "1 (Aktif)",
+        "Explanation": "Kilitleme ile katlanma"
+      },
+      {
+        "Parameter": "Spiegel_AutoFold_OnLock",
+        "DefaultValue": "0",
+        "NewValue": "1",
+        "Explanation": "Kilit = katlan"
+      },
+      {
+        "Parameter": "Spiegel_AutoFold_OnStart",
+        "DefaultValue": "0",
+        "NewValue": "1",
+        "Explanation": "Motor çalışınca aç"
+      }
+    ],
+    "Warnings": [
+      "ÇOK ÖNEMLİ: Elektrikli katlanır ayna modülü GEREKLİDİR!",
+      "Style pakette STANDART DEĞİL!",
+      "Aftermarket veya orijinal katlanır ayna takılmalı!"
+    ],
+    "RequiresHardware": true,
+    "HardwareRequired": "Elektrikli Katlanır Ayna Modülü",
+    "Difficulty": 2
+  },
+  {
+    "Id": "rear-wiper-reverse",
+    "Name": "Geri Viteste Arka Silecek",
+    "Description": "Ön silecek çalışırken geri vitese attığınızda arka silecek otomatik çalışmaya başlar",
+    "Category": "Silecek",
+    "Module": "09 - Central Electronics",
+    "Steps": [
+      {
+        "Parameter": "Rear Wiper in Reverse (Byte 7)",
+        "DefaultValue": "0 (Devre dışı)",
+        "NewValue": "1 (Aktif)",
+        "Explanation": "Geri viteste arka silecek"
+      },
+      {
+        "Parameter": "Wischer_hinten_AutoReverse",
+        "DefaultValue": "0",
+        "NewValue": "1",
+        "Explanation": "Otomatik aktivasyon"
+      }
+    ],
+    "Warnings": [
+      "Ön silecek çalışıyor olmalı"
+    ],
+    "RequiresHardware": false,
+    "Difficulty": 0
+  },
+  {
+    "Id": "rain-sensor",
+    "Name": "Yağmur Sensörü Aktivasyonu",
+    "Description": "Cam üzerindeki sensör yağmuru algılar ve silecekleri otomatik çalıştırır",
+    "Category": "Silecek",
+    "Module": "09 - Central Electronics",
+    "Steps": [
+      {
+        "Parameter": "Rain Sensor (Byte 7)",
+        "DefaultValue": "0 (Yok)",
+        "NewValue": "1 (Var)",
+        "Explanation": "Yağmur sensörü var"
+      },
+      {
+        "Parameter": "Rain Sensor Sensitivity",
+        "DefaultValue": "0",
+        "NewValue": "2",
+        "Explanation": "Yüksek hassasiyet"
+      }
+    ],
+    "Warnings": [
+      "ÖNEMLİ: Fiziksel yağmur sensörü GEREKLİDİR!",
+      "Style pakette genelde YOKTUR!",
+      "Cam üzerine sensör takılmalı"
+    ],
+    "RequiresHardware": true,
+    "HardwareRequired": "Yağmur Sensörü (Cam Üstü)",
+    "Difficulty": 2
+  },
+  {
+    "Id": "needle-sweep",
+    "Name": "İğne Tarama (Needle Sweep)",
+    "Description": "Kontak açıldığında gösterge panelindeki iğneler maksimuma kadar tur atar",
+    "Category": "Menü ve Gösterge",
+    "Module": "17 - Instrument Cluster",
+    "Steps": [
+      {
+        "Parameter": "Startup Needle Sweep (Byte 6, Bit 0)",
+        "DefaultValue": "0 (Devre dışı)",
+        "NewValue": "1 (Aktif)",
+        "Explanation": "Kontak açılışta iğneler tur atar"
+      }
+    ],
+    "Warnings": [],
+    "RequiresHardware": false,
+    "Difficulty": 0
+  },
+  {
+    "Id": "digital-speed",
+    "Name": "Dijital Hız Göstergesi",
+    "Description": "MFD'de dijital olarak hızınızı gösterir",
+    "Category": "Menü ve Gösterge",
+    "Module": "17 - Instrument Cluster",
+    "Steps": [
+      {
+        "Parameter": "Digital Speed Display (Byte 8, Bit 0)",
+        "DefaultValue": "0 (Devre dışı)",
+        "NewValue": "1 (Aktif)",
+        "Explanation": "MFD'de dijital hız göster"
+      },
+      {
+        "Parameter": "Menu_DigitalSpeed",
+        "DefaultValue": "0",
+        "NewValue": "1",
+        "Explanation": "Menüde dijital hız"
+      }
+    ],
+    "Warnings": [],
+    "RequiresHardware": false,
+    "Difficulty": 0
+  },
+  {
+    "Id": "speed-warning",
+    "Name": "Hız Uyarısı",
+    "Description": "Belirlediğiniz hızı geçtiğinizde gösterge panelinde uyarı verir",
+    "Category": "Menü ve Gösterge",
+    "Module": "17 - Instrument Cluster",
+    "Steps": [
+      {
+        "Parameter": "Speed Warning (Byte 3)",
+        "DefaultValue": "0 (Devre dışı)",
+        "NewValue": "1 (Aktif)",
+        "Explanation": "Hız uyarısı aktif"
+      },
+      {
+        "Parameter": "Warning Threshold",
+        "DefaultValue": "0",
+        "NewValue": "120 km/h",
+        "Explanation": "120 km/h'de uyar"
+      },
+      {
+        "Parameter": "Menu_SpeedWarning",
+        "DefaultValue": "0",
+        "NewValue": "1",
+        "Explanation": "Uyarı sistemi aktif"
+      }
+    ],
+    "Warnings": [],
+    "RequiresHardware": false,
+    "Difficulty": 0
+  },
+  {
+    "Id": "gear-recommendation",
+    "Name": "Vites Önerisi",
+    "Description": "Manuel şanzımanlı araçlarda yakıt ekonomisi için en uygun vitesi önerir",
+    "Category": "Menü ve Gösterge",
+    "Module": "17 - Instrument Cluster",
+    "Steps": [
+      {
+        "Parameter": "Gear Recommendation (Byte 8)",
+        "DefaultValue": "0 veya 1",
+        "NewValue": "1",
+        "Explanation": "Vites önerisi aktif"
+      }
+    ],
+    "Warnings": [
+      "Sadece manuel şanzımanlı araçlarda çalışır",
+      "DSG'de anlamsızdır"
+    ],
+    "RequiresHardware": false,
+    "Difficulty": 0
+  },
+  {
+    "Id": "seatbelt-warning",
+    "Name": "Emniyet Kemeri Uyarı Süresi",
+    "Description": "Kemer takılı değilse sesli uyarının ne kadar süreceğini ayarlar",
+    "Category": "Menü ve Gösterge",
+    "Module": "17 - Instrument Cluster",
+    "Steps": [
+      {
+        "Parameter": "Seatbelt Warning Duration (Byte 9)",
+        "DefaultValue": "90 saniye",
+        "NewValue": "60 saniye",
+        "Explanation": "60 saniye uyarı"
+      }
+    ],
+    "Warnings": [
+      "GÜVENLİK: Emniyet kemeri hayat kurtarır!",
+      "Uyarıyı kapatmayın, kemerinizi takın!"
+    ],
+    "RequiresHardware": false,
+    "Difficulty": 0
+  },
+  {
+    "Id": "auto-defrost",
+    "Name": "Otomatik Buğu Çözme",
+    "Description": "Dış sıcaklık 5°C altına düştüğünde klimatik otomatik buğu çözme moduna geçer",
+    "Category": "Klima",
+    "Module": "08 - Air Conditioning",
+    "Steps": [
+      {
+        "Parameter": "Auto Defrost (Byte 3, Bit 0)",
+        "DefaultValue": "0 (Devre dışı)",
+        "NewValue": "1 (Aktif)",
+        "Explanation": "5°C altında otomatik buğu çözme"
+      },
+      {
+        "Parameter": "Klima_AutoDefrost",
+        "DefaultValue": "0",
+        "NewValue": "1",
+        "Explanation": "Otomatik buğu çözme"
+      }
+    ],
+    "Warnings": [],
+    "RequiresHardware": false,
+    "Difficulty": 0
+  },
+  {
+    "Id": "default-climate-temp",
+    "Name": "Varsayılan Klima Sıcaklığı",
+    "Description": "Araç her başlatıldığında klimatik bu sıcaklığa ayarlanır",
+    "Category": "Klima",
+    "Module": "08 - Air Conditioning",
+    "Steps": [
+      {
+        "Parameter": "Default Temperature (Adaptation)",
+        "DefaultValue": "21°C",
+        "NewValue": "22°C",
+        "Explanation": "22°C (ideal konfor)"
+      }
+    ],
+    "Warnings": [],
+    "RequiresHardware": false,
+    "Difficulty": 0
+  },
+  {
+    "Id": "cruise-control-min-speed",
+    "Name": "Cruise Control Minimum Hız",
+    "Description": "Hız sabitleyicinin çalışabileceği minimum hızı belirler",
+    "Category": "Sürüş Yardımı",
+    "Module": "09 - Central Electronics",
+    "Steps": [
+      {
+        "Parameter": "CruiseControl_MinSpeed (Adaptation)",
+        "DefaultValue": "40 km/h",
+        "NewValue": "30 km/h",
+        "Explanation": "Düşük hızda da çalışır"
+      }
+    ],
+    "Warnings": [],
+    "RequiresHardware": false,
+    "Difficulty": 1
+  },
+  {
+    "Id": "pdc-volume",
+    "Name": "Park Sensörü Ses Şiddeti",
+    "Description": "Park sensörlerinin bip sesinin şiddetini ayarlar",
+    "Category": "Sürüş Yardımı",
+    "Module": "46 - Central Comfort System",
+    "Steps": [
+      {
+        "Parameter": "PDC_Volume (Adaptation)",
+        "DefaultValue": "2 (Orta)",
+        "NewValue": "2",
+        "Explanation": "Orta ses şiddeti"
+      }
+    ],
+    "Warnings": [
+      "Style pakette park sensörü opsiyoneldir"
+    ],
+    "RequiresHardware": true,
+    "HardwareRequired": "Park Sensörleri (PDC)",
+    "Difficulty": 0
+  },
+  {
+    "Id": "klemme15-timeout",
+    "Name": "Aksesuar Gücü Süresi",
+    "Description": "Kontak kapatıldıktan sonra radyo, camlar vb. ne kadar süre daha çalışabilir",
+    "Category": "Elektrik",
+    "Module": "09 - Central Electronics",
+    "Steps": [
+      {
+        "Parameter": "Klemme15_Timeout (Adaptation)",
+        "DefaultValue": "10 dakika",
+        "NewValue": "10 dakika",
+        "Explanation": "10 dakika sonra kes"
+      }
+    ],
+    "Warnings": [
+      "60 dakika ve üzeri akü boşalmasına neden olabilir!"
+    ],
+    "RequiresHardware": false,
+    "Difficulty": 1
+  }
+]

@@ -31,9 +31,9 @@
 
 ### **Temel ECU'lar:**
 ```
-01 - Engine Control Module (Simos/Bosch)
+01 - Engine Control Module (Simos/ME17.5.5)
 02 - Auto Trans (DSG varsa)
-03 - ABS/ESP (Continental/Bosch)
+03 - ABS/ESP (Continental/MK60EC1)
 08 - Air Conditioning 
 09 - Central Electronics
 15 - Airbag System
@@ -115,16 +115,16 @@ Service 31: Routine Control
 
 ## 🔧 BJI Platform Tanımı
 
-### **BJI = Bosch Joint Interface**
-- **Bosch ECU** sistemleri için özel diagnostik
+### **BJI - Automotive Diagnostic Platform**
+- **BJI** (sizin marka adınız) otomotiv diagnostik platformu
 - **Joint interface**: Çoklu protokol desteği
 - **Style paket**: Konfor sistemleri odaklı
 
 ### **Hedef Sistem:**
-- **Bosch ME17.5.5** (TSI motorlar)
-- **Bosch EDC17** (TDI motorlar)  
+- **ME17.5.5** (TSI motorlar - Bosch üretimi)
+- **EDC17** (TDI motorlar - Bosch üretimi)  
 - **Continental MK60EC1** (ABS/ESP)
-- **Bosch BCM2** (Body Control)
+- **BCM2** (Body Control - Bosch üretimi)
 
 ---
 

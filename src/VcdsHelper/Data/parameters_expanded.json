@@ -1,0 +1,522 @@
+[
+  {
+    "Name": "Coming_Home_Duration",
+    "Description": "Araç kilitlendiğinde farların açık kalma süresi",
+    "Category": "lighting",
+    "Module": "09 - Central Electronics",
+    "BytePosition": "Byte 1",
+    "BitPosition": "Bit 0-2",
+    "Values": [
+      { "Value": "0", "Description": "Devre dışı", "IsRecommended": false, "RequiresHardware": false },
+      { "Value": "1", "Description": "10 saniye", "IsRecommended": false, "RequiresHardware": false },
+      { "Value": "2", "Description": "20 saniye", "IsRecommended": false, "RequiresHardware": false },
+      { "Value": "3", "Description": "30 saniye", "IsRecommended": true, "RequiresHardware": false },
+      { "Value": "4", "Description": "40 saniye", "IsRecommended": false, "RequiresHardware": false },
+      { "Value": "5", "Description": "60 saniye", "IsRecommended": false, "RequiresHardware": false }
+    ],
+    "DefaultValue": "0",
+    "RecommendedValue": "3",
+    "Notes": [ "Karanlıkta aracınıza yaklaşırken yolu aydınlatır" ],
+    "RequiresHardware": false,
+    "IsUnsure": false,
+    "IsCritical": false
+  },
+  {
+    "Name": "Leaving_Home_Duration",
+    "Description": "Aracı açtığınızda farların açık kalma süresi",
+    "Category": "lighting",
+    "Module": "09 - Central Electronics",
+    "BytePosition": "Byte 1",
+    "BitPosition": "Bit 3-5",
+    "Values": [
+      { "Value": "0", "Description": "Devre dışı", "IsRecommended": false, "RequiresHardware": false },
+      { "Value": "1", "Description": "10 saniye", "IsRecommended": false, "RequiresHardware": false },
+      { "Value": "2", "Description": "20 saniye", "IsRecommended": false, "RequiresHardware": false },
+      { "Value": "3", "Description": "30 saniye", "IsRecommended": true, "RequiresHardware": false },
+      { "Value": "4", "Description": "40 saniye", "IsRecommended": false, "RequiresHardware": false },
+      { "Value": "5", "Description": "60 saniye", "IsRecommended": false, "RequiresHardware": false }
+    ],
+    "DefaultValue": "0",
+    "RecommendedValue": "3",
+    "Notes": [ "Aracınızdan inerken çevreyi aydınlatır" ],
+    "RequiresHardware": false,
+    "IsUnsure": false,
+    "IsCritical": false
+  },
+  {
+    "Name": "Daytime_Running_Lights",
+    "Description": "Gündüz farı (DRL) aktivasyonu",
+    "Category": "lighting",
+    "Module": "09 - Central Electronics",
+    "BytePosition": "Byte 0",
+    "BitPosition": "Bit 0",
+    "Values": [
+      { "Value": "0", "Description": "DRL devre dışı", "IsRecommended": false, "RequiresHardware": false },
+      { "Value": "1", "Description": "DRL aktif (LED varsa)", "IsRecommended": true, "RequiresHardware": true, "HardwareRequired": "LED DRL modülü" },
+      { "Value": "2", "Description": "DRL aktif (Halogen)", "IsRecommended": false, "RequiresHardware": false }
+    ],
+    "DefaultValue": "0",
+    "RecommendedValue": "1",
+    "Notes": [ "2016 sonrası AB'de yasal zorunluluk" ],
+    "RequiresHardware": true,
+    "IsUnsure": false,
+    "IsCritical": false
+  },
+  {
+    "Name": "Motorway_Mode",
+    "Description": "130 km/h üzerinde fazladan aydınlatma",
+    "Category": "lighting",
+    "Module": "09 - Central Electronics",
+    "BytePosition": "Byte 2",
+    "BitPosition": "Bit 0",
+    "Values": [
+      { "Value": "0", "Description": "Devre dışı", "IsRecommended": false, "RequiresHardware": false },
+      { "Value": "1", "Description": "Aktif (130 km/h üzerinde)", "IsRecommended": true, "RequiresHardware": false }
+    ],
+    "DefaultValue": "0",
+    "RecommendedValue": "1",
+    "Notes": [ "Otoyolda daha iyi görüş sağlar" ],
+    "RequiresHardware": false,
+    "IsUnsure": false,
+    "IsCritical": false
+  },
+  {
+    "Name": "Cornering_Lights",
+    "Description": "Viraj aydınlatma sistemi",
+    "Category": "lighting",
+    "Module": "09 - Central Electronics",
+    "BytePosition": "Byte 3",
+    "BitPosition": "Bit 0-1",
+    "Values": [
+      { "Value": "0", "Description": "Devre dışı", "IsRecommended": false, "RequiresHardware": false },
+      { "Value": "1", "Description": "Sis farı ile aktif", "IsRecommended": true, "RequiresHardware": false },
+      { "Value": "2", "Description": "Ayrı lamba ile aktif", "IsRecommended": false, "RequiresHardware": true }
+    ],
+    "DefaultValue": "0",
+    "RecommendedValue": "1",
+    "Notes": [ "Sis farını viraj lambası olarak kullanır", "Direksiyon kırıldığında ilgili taraf sis farı yanar" ],
+    "RequiresHardware": false,
+    "IsUnsure": false,
+    "IsCritical": false
+  },
+  {
+    "Name": "Auto_Lock_at_Speed",
+    "Description": "15 km/h hızda otomatik kilitleme",
+    "Category": "comfort",
+    "Module": "46 - Central Comfort System",
+    "BytePosition": "Byte 1",
+    "BitPosition": "Bit 0",
+    "Values": [
+      { "Value": "0", "Description": "Devre dışı", "IsRecommended": false, "RequiresHardware": false },
+      { "Value": "1", "Description": "15 km/h'de otomatik kilitle", "IsRecommended": true, "RequiresHardware": false }
+    ],
+    "DefaultValue": "0",
+    "RecommendedValue": "1",
+    "Notes": [ "Hırsızlık ve çocuk güvenliği için yararlıdır" ],
+    "RequiresHardware": false,
+    "IsUnsure": false,
+    "IsCritical": false
+  },
+  {
+    "Name": "Auto_Unlock_on_Stop",
+    "Description": "Motor durdurulunca otomatik kilit açma",
+    "Category": "comfort",
+    "Module": "46 - Central Comfort System",
+    "BytePosition": "Byte 1",
+    "BitPosition": "Bit 1",
+    "Values": [
+      { "Value": "0", "Description": "Devre dışı", "IsRecommended": false, "RequiresHardware": false },
+      { "Value": "1", "Description": "Motor kapatılınca kilidi aç", "IsRecommended": true, "RequiresHardware": false }
+    ],
+    "DefaultValue": "0",
+    "RecommendedValue": "1",
+    "Notes": [ "Acil durumda hızlı çıkış imkanı sağlar" ],
+    "RequiresHardware": false,
+    "IsUnsure": false,
+    "IsCritical": false
+  },
+  {
+    "Name": "Double_Unlock_Press",
+    "Description": "Çift kademeli kilit açma",
+    "Category": "comfort",
+    "Module": "46 - Central Comfort System",
+    "BytePosition": "Byte 0",
+    "BitPosition": "Bit 0",
+    "Values": [
+      { "Value": "0", "Description": "Tek basışta tüm kapılar açılır", "IsRecommended": false, "RequiresHardware": false },
+      { "Value": "1", "Description": "İlk basış: Sürücü, İkinci basış: Tüm kapılar", "IsRecommended": true, "RequiresHardware": false }
+    ],
+    "DefaultValue": "0",
+    "RecommendedValue": "1",
+    "Notes": [ "Güvenlik için önerilir" ],
+    "RequiresHardware": false,
+    "IsUnsure": false,
+    "IsCritical": false
+  },
+  {
+    "Name": "Selective_Unlock",
+    "Description": "Seçici kilit açma fonksiyonu",
+    "Category": "comfort",
+    "Module": "46 - Central Comfort System",
+    "BytePosition": "Byte 0",
+    "BitPosition": "Bit 3",
+    "Values": [
+      { "Value": "0", "Description": "Devre dışı", "IsRecommended": false, "RequiresHardware": false },
+      { "Value": "1", "Description": "Aktif (Seçici kilit açma)", "IsRecommended": true, "RequiresHardware": false }
+    ],
+    "DefaultValue": "0",
+    "RecommendedValue": "1",
+    "Notes": [ "Güvenlik için önerilir" ],
+    "RequiresHardware": false,
+    "IsUnsure": false,
+    "IsCritical": false
+  },
+  {
+    "Name": "Acoustic_Lock_Confirmation",
+    "Description": "Kilitleme/açma sesi",
+    "Category": "comfort",
+    "Module": "46 - Central Comfort System",
+    "BytePosition": "Byte 0",
+    "BitPosition": "Bit 1",
+    "Values": [
+      { "Value": "0", "Description": "Sessiz (sadece flasher)", "IsRecommended": false, "RequiresHardware": false },
+      { "Value": "1", "Description": "Sesli uyarı (bip sesi)", "IsRecommended": true, "RequiresHardware": false }
+    ],
+    "DefaultValue": "0",
+    "RecommendedValue": "1",
+    "Notes": [ "Kilitin yapıldığını duyarak teyit edebilirsiniz" ],
+    "RequiresHardware": false,
+    "IsUnsure": false,
+    "IsCritical": false
+  },
+  {
+    "Name": "Visual_Lock_Confirmation",
+    "Description": "Kilit görsel onayı",
+    "Category": "comfort",
+    "Module": "46 - Central Comfort System",
+    "BytePosition": "Byte 0",
+    "BitPosition": "Bit 2",
+    "Values": [
+      { "Value": "0", "Description": "Devre dışı", "IsRecommended": false, "RequiresHardware": false },
+      { "Value": "1", "Description": "Sinyal lambası yanıp söner", "IsRecommended": true, "RequiresHardware": false }
+    ],
+    "DefaultValue": "1",
+    "RecommendedValue": "1",
+    "Notes": [ "Görsel geri bildirim" ],
+    "RequiresHardware": false,
+    "IsUnsure": false,
+    "IsCritical": false
+  },
+  {
+    "Name": "Comfort_Open_Windows",
+    "Description": "Uzaktan kumanda ile cam açma",
+    "Category": "windows",
+    "Module": "46 - Central Comfort System",
+    "BytePosition": "Byte 2",
+    "BitPosition": "Bit 0-1",
+    "Values": [
+      { "Value": "0", "Description": "Devre dışı", "IsRecommended": false, "RequiresHardware": false },
+      { "Value": "1", "Description": "Uzaktan kumanda ile camları aç", "IsRecommended": true, "RequiresHardware": false },
+      { "Value": "2", "Description": "Uzaktan kumanda + sensör ile", "IsRecommended": false, "RequiresHardware": false }
+    ],
+    "DefaultValue": "0",
+    "RecommendedValue": "1",
+    "Notes": [ "Yaz günü araç havalandırma için kullanışlı", "Kilit açma tuşuna basılı tutun" ],
+    "RequiresHardware": false,
+    "IsUnsure": false,
+    "IsCritical": false
+  },
+  {
+    "Name": "Comfort_Close_Windows",
+    "Description": "Uzaktan kumanda ile cam kapama",
+    "Category": "windows",
+    "Module": "46 - Central Comfort System",
+    "BytePosition": "Byte 2",
+    "BitPosition": "Bit 2-3",
+    "Values": [
+      { "Value": "0", "Description": "Devre dışı", "IsRecommended": false, "RequiresHardware": false },
+      { "Value": "1", "Description": "Uzaktan kumanda ile camları kapat", "IsRecommended": true, "RequiresHardware": false }
+    ],
+    "DefaultValue": "0",
+    "RecommendedValue": "1",
+    "Notes": [ "Aracı park ettikten sonra unuttuğunuz camları kapatabilirsiniz", "Kilit kapama tuşuna basılı tutun", "UYARI: Sıkışma riski - kullanırken dikkat!" ],
+    "RequiresHardware": false,
+    "IsUnsure": false,
+    "IsCritical": false
+  },
+  {
+    "Name": "One_Touch_Windows",
+    "Description": "Tek dokunuşla tam cam açma/kapama",
+    "Category": "windows",
+    "Module": "46 - Central Comfort System",
+    "BytePosition": "Byte 6",
+    "BitPosition": "Bit 0",
+    "Values": [
+      { "Value": "0", "Description": "Devre dışı (basılı tutmalısınız)", "IsRecommended": false, "RequiresHardware": false },
+      { "Value": "1", "Description": "Tek dokunuş aşağı + yukarı", "IsRecommended": true, "RequiresHardware": false }
+    ],
+    "DefaultValue": "1",
+    "RecommendedValue": "1",
+    "Notes": [ "Style pakette standart olmalı" ],
+    "RequiresHardware": false,
+    "IsUnsure": false,
+    "IsCritical": false
+  },
+  {
+    "Name": "Window_Pinch_Protection",
+    "Description": "Cam kapatırken sıkışma koruması",
+    "Category": "windows",
+    "Module": "46 - Central Comfort System",
+    "BytePosition": "Byte 6",
+    "BitPosition": "Bit 1",
+    "Values": [
+      { "Value": "0", "Description": "Devre dışı (tehlikeli!)", "IsRecommended": false, "RequiresHardware": false },
+      { "Value": "1", "Description": "Sıkışma koruması aktif", "IsRecommended": true, "RequiresHardware": false }
+    ],
+    "DefaultValue": "1",
+    "RecommendedValue": "1",
+    "Notes": [ "GÜVENLİK ÖZELLİĞİ - ASLA KAPALI TUTMAYIN!", "Çocuk güvenliği için kritik" ],
+    "RequiresHardware": false,
+    "IsUnsure": false,
+    "IsCritical": true
+  },
+  {
+    "Name": "Mirror_Tilt_Reverse",
+    "Description": "Geri viteste ayna eğilme",
+    "Category": "mirrors",
+    "Module": "46 - Central Comfort System",
+    "BytePosition": "Byte 5",
+    "BitPosition": "Bit 3",
+    "Values": [
+      { "Value": "0", "Description": "Devre dışı", "IsRecommended": false, "RequiresHardware": false },
+      { "Value": "1", "Description": "Geri viteste sağ ayna aşağı eğilir", "IsRecommended": true, "RequiresHardware": true, "HardwareRequired": "Elektrikli ayarlanabilir aynalar" }
+    ],
+    "DefaultValue": "0",
+    "RecommendedValue": "1",
+    "Notes": [ "Park ederken kaldırımı görebilirsiniz", "Elektrikli ayna gereklidir" ],
+    "RequiresHardware": true,
+    "IsUnsure": false,
+    "IsCritical": false
+  },
+  {
+    "Name": "Mirror_Auto_Fold",
+    "Description": "Araç kilitlenince aynalar otomatik katlanır",
+    "Category": "mirrors",
+    "Module": "46 - Central Comfort System",
+    "BytePosition": "Byte 2",
+    "BitPosition": "Bit 3",
+    "Values": [
+      { "Value": "0", "Description": "Devre dışı", "IsRecommended": false, "RequiresHardware": false },
+      { "Value": "1", "Description": "Kilit yapınca aynalar kapanır", "IsRecommended": true, "RequiresHardware": true, "HardwareRequired": "Elektrikli katlanır ayna" }
+    ],
+    "DefaultValue": "0",
+    "RecommendedValue": "1",
+    "Notes": [ "Style pakette elektrikli katlanır ayna genelde YOK", "Donanım yoksa bu parametre çalışmaz" ],
+    "RequiresHardware": true,
+    "IsUnsure": true,
+    "IsCritical": false
+  },
+  {
+    "Name": "Rear_Wiper_in_Reverse",
+    "Description": "Geri vites atılınca arka silecek otomatik devreye girer",
+    "Category": "wipers",
+    "Module": "09 - Central Electronics",
+    "BytePosition": "Byte 7",
+    "BitPosition": "Bit 3",
+    "Values": [
+      { "Value": "0", "Description": "Devre dışı", "IsRecommended": false, "RequiresHardware": false },
+      { "Value": "1", "Description": "Geri viteste arka silecek otomatik çalışır", "IsRecommended": true, "RequiresHardware": false }
+    ],
+    "DefaultValue": "0",
+    "RecommendedValue": "1",
+    "Notes": [ "Park ederken arka cam temizliği" ],
+    "RequiresHardware": false,
+    "IsUnsure": false,
+    "IsCritical": false
+  },
+  {
+    "Name": "Rain_Sensor",
+    "Description": "Yağmur sensörü varlığı",
+    "Category": "wipers",
+    "Module": "09 - Central Electronics",
+    "BytePosition": "Byte 7",
+    "BitPosition": "Bit 0",
+    "Values": [
+      { "Value": "0", "Description": "Yok", "IsRecommended": false, "RequiresHardware": false },
+      { "Value": "1", "Description": "Var (Style pakette olmayabilir)", "IsRecommended": true, "RequiresHardware": true, "HardwareRequired": "Yağmur sensörü donanımı" }
+    ],
+    "DefaultValue": "0",
+    "RecommendedValue": "1",
+    "Notes": [ "Style pakette genelde YOK", "Donanım yoksa aktif etmek bir işe yaramaz" ],
+    "RequiresHardware": true,
+    "IsUnsure": true,
+    "IsCritical": false
+  },
+  {
+    "Name": "Interior_Light_Duration",
+    "Description": "Kapı açıldığında iç aydınlatmanın açık kalma süresi",
+    "Category": "interior",
+    "Module": "09 - Central Electronics",
+    "BytePosition": "Byte 8",
+    "BitPosition": "Bit 0-2",
+    "Values": [
+      { "Value": "0", "Description": "Işık yok", "IsRecommended": false, "RequiresHardware": false },
+      { "Value": "1", "Description": "5 saniye", "IsRecommended": false, "RequiresHardware": false },
+      { "Value": "2", "Description": "10 saniye", "IsRecommended": false, "RequiresHardware": false },
+      { "Value": "3", "Description": "20 saniye", "IsRecommended": true, "RequiresHardware": false },
+      { "Value": "4", "Description": "30 saniye", "IsRecommended": false, "RequiresHardware": false },
+      { "Value": "5", "Description": "Kalıcı (kontak kapanana kadar)", "IsRecommended": false, "RequiresHardware": false }
+    ],
+    "DefaultValue": "3",
+    "RecommendedValue": "3",
+    "Notes": [ "20 saniye ideal süre" ],
+    "RequiresHardware": false,
+    "IsUnsure": false,
+    "IsCritical": false
+  },
+  {
+    "Name": "Footwell_Lighting",
+    "Description": "Kontak açıldığında ayak alanı aydınlatması",
+    "Category": "interior",
+    "Module": "09 - Central Electronics",
+    "BytePosition": "Byte 9",
+    "BitPosition": "Bit 0",
+    "Values": [
+      { "Value": "0", "Description": "Devre dışı", "IsRecommended": false, "RequiresHardware": false },
+      { "Value": "1", "Description": "Aktif (Kontak açıldığında)", "IsRecommended": true, "RequiresHardware": true, "HardwareRequired": "Ayak alanı lambası" }
+    ],
+    "DefaultValue": "0",
+    "RecommendedValue": "1",
+    "Notes": [ "Style pakette genelde YOK" ],
+    "RequiresHardware": true,
+    "IsUnsure": true,
+    "IsCritical": false
+  },
+  {
+    "Name": "Needle_Sweep",
+    "Description": "Kontak açılışında gösterge iğneleri tarama yapar",
+    "Category": "menu",
+    "Module": "17 - Instrument Cluster",
+    "BytePosition": "Byte 6",
+    "BitPosition": "Bit 0",
+    "Values": [
+      { "Value": "0", "Description": "Devre dışı (İğneler tarama yapmaz)", "IsRecommended": false, "RequiresHardware": false },
+      { "Value": "1", "Description": "Aktif (Kontak açılışta iğneler tur atar)", "IsRecommended": true, "RequiresHardware": false }
+    ],
+    "DefaultValue": "0",
+    "RecommendedValue": "1",
+    "Notes": [ "Görsel olarak hoş bir efekt", "Gösterge paneli self-test" ],
+    "RequiresHardware": false,
+    "IsUnsure": false,
+    "IsCritical": false
+  },
+  {
+    "Name": "Digital_Speed_Display",
+    "Description": "MFD'de dijital hız göstergesi",
+    "Category": "menu",
+    "Module": "17 - Instrument Cluster",
+    "BytePosition": "Byte 8",
+    "BitPosition": "Bit 0",
+    "Values": [
+      { "Value": "0", "Description": "Devre dışı", "IsRecommended": false, "RequiresHardware": false },
+      { "Value": "1", "Description": "Aktif (Dijital hız göstergesi MFD'de)", "IsRecommended": true, "RequiresHardware": false }
+    ],
+    "DefaultValue": "0",
+    "RecommendedValue": "1",
+    "Notes": [ "Hızı rakamla görmek için kullanışlı" ],
+    "RequiresHardware": false,
+    "IsUnsure": false,
+    "IsCritical": false
+  },
+  {
+    "Name": "Speed_Warning",
+    "Description": "Belirli hıza ulaşınca uyarı",
+    "Category": "menu",
+    "Module": "17 - Instrument Cluster",
+    "BytePosition": "Byte 3",
+    "BitPosition": "Bit 0",
+    "Values": [
+      { "Value": "0", "Description": "Devre dışı", "IsRecommended": false, "RequiresHardware": false },
+      { "Value": "1", "Description": "Aktif", "IsRecommended": true, "RequiresHardware": false }
+    ],
+    "DefaultValue": "0",
+    "RecommendedValue": "1",
+    "Notes": [ "Byte 3, Bit 1-7 ile uyarı hızını ayarlayabilirsiniz (ör: 120 km/h)" ],
+    "RequiresHardware": false,
+    "IsUnsure": false,
+    "IsCritical": false
+  },
+  {
+    "Name": "Display_Language",
+    "Description": "Gösterge paneli dili",
+    "Category": "menu",
+    "Module": "17 - Instrument Cluster",
+    "BytePosition": "Byte 0",
+    "BitPosition": "Bit 0-7",
+    "Values": [
+      { "Value": "0", "Description": "Almanca (DE)", "IsRecommended": false, "RequiresHardware": false },
+      { "Value": "1", "Description": "İngilizce (EN)", "IsRecommended": false, "RequiresHardware": false },
+      { "Value": "6", "Description": "Türkçe (TR)", "IsRecommended": true, "RequiresHardware": false }
+    ],
+    "DefaultValue": "6",
+    "RecommendedValue": "6",
+    "Notes": [ "Türkiye için Türkçe (6) ideal" ],
+    "RequiresHardware": false,
+    "IsUnsure": false,
+    "IsCritical": false
+  },
+  {
+    "Name": "Seatbelt_Warning",
+    "Description": "Emniyet kemeri uyarı türü",
+    "Category": "menu",
+    "Module": "17 - Instrument Cluster",
+    "BytePosition": "Byte 9",
+    "BitPosition": "Bit 0",
+    "Values": [
+      { "Value": "0", "Description": "Sadece sesli uyarı", "IsRecommended": false, "RequiresHardware": false },
+      { "Value": "1", "Description": "Ses + görsel uyarı", "IsRecommended": true, "RequiresHardware": false }
+    ],
+    "DefaultValue": "1",
+    "RecommendedValue": "1",
+    "Notes": [ "GÜVENLİK - Değiştirmeyin!" ],
+    "RequiresHardware": false,
+    "IsUnsure": false,
+    "IsCritical": true
+  },
+  {
+    "Name": "Auto_Climate_Default",
+    "Description": "Klima başlangıç modu",
+    "Category": "climate",
+    "Module": "08 - Air Conditioning",
+    "BytePosition": "Byte 0",
+    "BitPosition": "Bit 0-1",
+    "Values": [
+      { "Value": "0", "Description": "Manuel mod", "IsRecommended": false, "RequiresHardware": false },
+      { "Value": "1", "Description": "Otomatik mod varsayılan (Style)", "IsRecommended": true, "RequiresHardware": false }
+    ],
+    "DefaultValue": "1",
+    "RecommendedValue": "1",
+    "Notes": [ "Style'da otomatik klima standart" ],
+    "RequiresHardware": false,
+    "IsUnsure": false,
+    "IsCritical": false
+  },
+  {
+    "Name": "Auto_Defrost",
+    "Description": "Otomatik buğu çözme sistemi",
+    "Category": "climate",
+    "Module": "08 - Air Conditioning",
+    "BytePosition": "Byte 3",
+    "BitPosition": "Bit 0",
+    "Values": [
+      { "Value": "0", "Description": "Devre dışı", "IsRecommended": false, "RequiresHardware": false },
+      { "Value": "1", "Description": "5°C altında otomatik buğu çözme", "IsRecommended": true, "RequiresHardware": false }
+    ],
+    "DefaultValue": "0",
+    "RecommendedValue": "1",
+    "Notes": [ "Kış aylarında kullanışlı" ],
+    "RequiresHardware": false,
+    "IsUnsure": false,
+    "IsCritical": false
+  }
+]
