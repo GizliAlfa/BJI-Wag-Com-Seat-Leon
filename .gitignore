@@ -1,11 +1,14 @@
 ﻿# Build outputs
 bin/
 obj/
-*.exe
 *.dll
 *.pdb
 *.deps.json
 *.runtimeconfig.json
+
+# Allow ONLY the published single-file EXE
+!src/VcdsHelper/bin/Release/net8.0/win-x64/publish/
+!src/VcdsHelper/bin/Release/net8.0/win-x64/publish/VcdsHelper.exe
 
 # Backup files
 *_backup*.json
